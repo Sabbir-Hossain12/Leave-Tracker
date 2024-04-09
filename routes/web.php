@@ -8,9 +8,8 @@ Route::get('/', function () {
     return view('home-page');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified',AdminMiddleware::class])->name('dashboard');
+
+
 
 Route::view('/history', 'history')->middleware(['auth', 'verified'])->name('history');
 
@@ -22,3 +21,13 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+//Employee Routes
+Route::middleware(['auth','EmployeeMiddleware'])->prefix('employee')->group(function(){
+   Route::view('/dashboard','employee-dashboard')->name('employee.dashboard');
+});
+
+//Admin Routes
+Route::middleware(['auth','AdminMiddleware'])->prefix('admin')->group(function(){
+   Route::view('/dashboard','admin-dashboard')->name('admin.dashboard');
+});

@@ -1,6 +1,4 @@
 
-
-
 @extends('layouts.home')
 
 @section('contents')

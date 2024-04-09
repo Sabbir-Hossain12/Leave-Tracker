@@ -43,9 +43,9 @@
                 </ul>
                 @if (Route::has('login'))
                     <nav class="-mx-3 flex flex-1 justify-end">
-                        @auth
+                        @if(auth()->check())
                             <a
-                                href="{{ url('/dashboard') }}"
+                                href="{{Auth::user()->role == 1 ? url('/admin/dashboard') : url('employee/dashboard') }}"
                                 class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
                             >
                                 Dashboard
@@ -84,7 +84,7 @@
                         VAT amount or net amount, offering swift and accurate results tailored to user preferences</p>
                     <div class="d-flex flex-wrap">@auth
                             <a
-                                href="{{ url('/dashboard') }}"
+                                href="{{Auth::user()->role == 1 ? url('/admin/dashboard') : url('employee/dashboard') }}"
                                 class="btn btn-lg btn-secondary rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
                             >
                                 Dashboard
