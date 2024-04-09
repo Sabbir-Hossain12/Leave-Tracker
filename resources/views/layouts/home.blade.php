@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.104.2">
-    <title>Vat Calculator</title>
+    <title>Leave tracker</title>
     <link href="{{asset('assets/css/fontawesome.css')}}" rel="stylesheet"/>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/dashboard/">
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">

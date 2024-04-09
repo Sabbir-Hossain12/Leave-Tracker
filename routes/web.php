@@ -31,3 +31,5 @@ Route::middleware(['auth','EmployeeMiddleware'])->prefix('employee')->group(func
 Route::middleware(['auth','AdminMiddleware'])->prefix('admin')->group(function(){
    Route::view('/dashboard','admin-dashboard')->name('admin.dashboard');
 });
+
+Route::resource('/leaves', 'App\Http\Controllers\LeaveController');

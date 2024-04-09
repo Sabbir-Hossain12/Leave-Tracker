@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <title>Vat Calculator</title>
+    <title>Leave Tracker</title>
 {{--    <link rel="icon" type="image/x-icon" href="{{asset('/favicon.ico')}}"/>--}}
     <link href="{{asset('assets/css/bootstrap.css')}}" rel="stylesheet"/>
     <link href="{{asset('assets/css/animate.min.css')}}" rel="stylesheet"/>
