@@ -1,18 +1,6 @@
 @extends('layouts.home')
 @section('navs')
-    <li class="nav-item">
-        <a class="nav-link " href="{{route('leaves.create')}}"><i class="fas fa-clipboard"></i>
-            <span data-feather="file" class="p-1 align-text-bottom"></span>
-            Leave requests
-        </a>
-    </li>
-
-    <li class="nav-item">
-        <a class="nav-link " href="{{route('leaves.index')}}"><i class="fas fa-clipboard"></i>
-            <span data-feather="file" class="p-1 align-text-bottom"></span>
-            History
-        </a>
-    </li>
+    <x-nav-bar></x-nav-bar>
 @endsection
 @section('contents')
     <div class="container-fluid">
@@ -42,27 +30,24 @@
                         <thead>
                         <tr>
                             <th scope="col">SN</th>
-                            <th scope="col">Leave Type</th>
-                            <th scope="col">Start Date</th>
-                            <th scope="col">End Date</th>
-                            <th scope="col">Reason</th>
+                            <th scope="col">Employee Name</th>
+                            <th scope="col">Email</th>
                             <th scope="col">Status</th>
+                            <th scope="col">Action</th>
+
                         </tr>
                         </thead>
                         <tbody id="tableList">
-                        @foreach($data as $single)
-
+                        @foreach($employees as $employee)
                             <tr>
                                 <td>{{$loop->iteration}}</td>
-                                <td>{{$single->leave_type}}</td>
-                                <td>{{$single->start_date}}</td>
-                                <td>{{$single->end_date}}</td>
-                                <td>{{$single->reason}}</td>
-                                <td>{{$single->status}}</td>
+                                <td>{{$employee->name}}</td>
+                                <td>{{$employee->email}}</td>
+                                <td>{{($employee->is_approved)==0 ? 'Pending' : 'Approved'}}</td>
+                              <td> <form > <button type="submit" class="btn btn-sm btn-primary">Change Status</button></form></td>
                             </tr>
 
                         @endforeach
-
                         </tbody>
                     </table>
                 </div>

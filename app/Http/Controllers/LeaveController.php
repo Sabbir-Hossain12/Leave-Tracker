@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\LeaveRequest;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class LeaveController extends Controller
@@ -12,9 +13,10 @@ class LeaveController extends Controller
      */
     public function index()
     {
-        $data= LeaveRequest::get();
+        $data = LeaveRequest::get();
 
-        return view('employee-history',['data'=>$data
+        return view('employee-history', [
+            'data' => $data
         ]);
     }
 
@@ -31,7 +33,7 @@ class LeaveController extends Controller
      */
     public function store(Request $request)
     {
-       $request->validate(
+        $request->validate(
             [
                 'leaveType' => 'required',
                 'startDate' => 'required|after:today',
@@ -45,7 +47,7 @@ class LeaveController extends Controller
             'start_date' => $request->startDate,
             'end_date' => $request->endDate,
             'reason' => $request->reason,
-            'employee_id'=> auth()->user()->id
+            'employee_id' => auth()->user()->id
         ]);
 
         return redirect()->route('leaves.index');
@@ -82,4 +84,21 @@ class LeaveController extends Controller
     {
         //
     }
+
+    public function adminDashboard(Request $request)
+    {
+        $pending_leaves = LeaveRequest::where('status', 'Pending')->count();
+        $pending_employees = User::where('is_approved', 0)->count();
+        $approved_leaves = LeaveRequest::where('status', 'Approved')->count();
+        $total_leaves = LeaveRequest::count();
+        $rejected_leaves = LeaveRequest::where('status', 'Rejected')->count();
+
+        return view('admin-dashboard', [
+            'pending_leaves' => $pending_leaves, 'pending_employees' => $pending_employees,
+            'approved_leaves' => $approved_leaves, 'total_leaves' => $total_leaves,
+            'rejected_leaves' => $rejected_leaves
+        ]);
+    }
+
+
 }

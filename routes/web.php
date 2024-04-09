@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LeaveController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Middleware\AdminMiddleware;
 use Illuminate\Support\Facades\Route;
@@ -29,7 +30,8 @@ Route::middleware(['auth','EmployeeMiddleware'])->prefix('employee')->group(func
 
 //Admin Routes
 Route::middleware(['auth','AdminMiddleware'])->prefix('admin')->group(function(){
-   Route::view('/dashboard','admin-dashboard')->name('admin.dashboard');
+   Route::get('/dashboard',[LeaveController::class,'adminDashboard'])->name('admin.dashboard');
 });
 
 Route::resource('/leaves', 'App\Http\Controllers\LeaveController');
+Route::resource('/employees', 'App\Http\Controllers\EmployeeController');
