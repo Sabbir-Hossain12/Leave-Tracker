@@ -12,7 +12,10 @@ class LeaveController extends Controller
      */
     public function index()
     {
-        //
+        $data= LeaveRequest::get();
+
+        return view('employee-history',['data'=>$data
+        ]);
     }
 
     /**
@@ -44,6 +47,8 @@ class LeaveController extends Controller
             'reason' => $request->reason,
             'employee_id'=> auth()->user()->id
         ]);
+
+        return redirect()->route('leaves.index');
     }
 
     /**

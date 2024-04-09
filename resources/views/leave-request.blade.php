@@ -2,14 +2,14 @@
 
 @section('navs')
     <li class="nav-item">
-        <a class="nav-link " href=""><i class="fas fa-clipboard"></i>
+        <a class="nav-link " href="{{route('leaves.create')}}"><i class="fas fa-clipboard"></i>
             <span data-feather="file" class="p-1 align-text-bottom"></span>
             Leave requests
         </a>
     </li>
 
     <li class="nav-item">
-        <a class="nav-link " href=""><i class="fas fa-clipboard"></i>
+        <a class="nav-link " href="{{route('leaves.index')}}"><i class="fas fa-clipboard"></i>
             <span data-feather="file" class="p-1 align-text-bottom"></span>
             History
         </a>
