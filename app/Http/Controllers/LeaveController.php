@@ -74,7 +74,11 @@ class LeaveController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        LeaveRequest::where('id', $id)->update([
+            'status' => $request->status
+        ]);
+
+        return redirect()->route('leave-request-list');
     }
 
     /**
@@ -100,5 +104,10 @@ class LeaveController extends Controller
         ]);
     }
 
+    public function requestListForAdmin()
+    {
+        $data= LeaveRequest::with('user')->get();
+        return view('leave-request-list',['data'=> $data]);
+    }
 
 }

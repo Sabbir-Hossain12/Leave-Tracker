@@ -35,3 +35,4 @@ Route::middleware(['auth','AdminMiddleware'])->prefix('admin')->group(function()
 
 Route::resource('/leaves', 'App\Http\Controllers\LeaveController');
 Route::resource('/employees', 'App\Http\Controllers\EmployeeController');
+Route::get('/leave-requests', [LeaveController::class, 'requestListForAdmin'])->name('leave-request-list');
