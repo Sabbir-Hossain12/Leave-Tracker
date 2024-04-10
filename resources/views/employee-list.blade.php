@@ -40,7 +40,7 @@
                                 <td>{{$employee->name}}</td>
                                 <td>{{$employee->email}}</td>
                                 <td>{{($employee->is_approved)==0 ? 'Pending' : 'Approved'}}</td>
-                              <td> <form > <button type="submit" class="btn btn-sm btn-primary">Change Status</button></form></td>
+                              <td> <button onclick="updateModal({{$employee->id}})" class="btn btn-sm btn-primary">Change Status</button></td>
                             </tr>
 
                         @endforeach
@@ -50,5 +50,61 @@
             </main>
         </div>
     </div>
+    {{--Modal--}}
+    @foreach($employees as $employee)
+        <div class="modal animated zoomIn" id="update-modal-{{$employee->id}}" tabindex="-1" aria-labelledby="exampleModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Update Notes</h5>
+                    </div>
+                    <form id="update-form" method="POST" action="{{route('employees.update',$employee->id)}}">
+                        @csrf
+                        @method('PUT')
+                        <div class="modal-body">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12 p-1">
 
+
+                                        <label for="status" class="form-label">Status</label>
+
+                                        <select class="form-select" name="status" id="status">
+                                            <option value="0">Pending</option>
+                                            <option value="1">Approved</option>
+
+                                        </select>
+
+
+                                        {{--                                    <input type="text" class="" id="updateID" value="{{$single->id}}">--}}
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <a id="update-modal-close" class="btn btn-outline-warning" data-bs-dismiss="modal"
+                               aria-label="Close">Close
+                            </a>
+                            <button type="submit" id="update-btn" class="btn btn-outline-primary">Update</button>
+                        </div>
+                    </form>
+
+                </div>
+
+
+            </div>
+        </div>
+    @endforeach
+
+
+
+    <script>
+        function updateModal(id) {
+
+            $('#update-modal-'+ id).modal('show');
+        }
+
+    </script>
 @endsection

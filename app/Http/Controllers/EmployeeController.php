@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\LeaveRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -53,7 +54,11 @@ class EmployeeController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        User::where('id', $id)->update([
+                    'is_approved' => $request->status
+                ]);
+
+                return redirect()->route('employees.index');
     }
 
     /**
@@ -64,8 +69,5 @@ class EmployeeController extends Controller
         //
     }
 
-    public function changeStatus(Request $request)
-    {
 
-    }
 }
