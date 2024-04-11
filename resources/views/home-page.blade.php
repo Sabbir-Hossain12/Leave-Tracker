@@ -29,7 +29,7 @@
         <div class="container">
             <a class="navbar-brand" href="{{url('/')}}">
 {{--                <img class="img-fluid" src="{{asset('assets/images/capture3.png')}}" alt="" width="120px">--}}
-                <span class="fw-bold">Vat Calculator</span>
+                <span class="fw-bold">Leave Tracker</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#header01" aria-controls="header01" aria-expanded="false"
@@ -79,9 +79,10 @@
             <div class="row align-items-center justify-content-evenly vh-100 mt-6">
                 <div class="col-12 col-md-10 col-lg-5 mb-5 mb-lg-0">
                     {{--                    <h2 class="fw-bold"></h2>--}}
-                    <h2 class="fw-bold mb-3 text-light">Vat Calculator</h2>
-                    <p class="lead fw-lighter mb-4 text-light">The VAT Calculator is a Laravel-based web tool for effortless Value Added Tax (VAT) calculations. Users input the gross sum, choose VAT operation (include or exclude), and specify the tax percentage. The application swiftly computes the
-                        VAT amount or net amount, offering swift and accurate results tailored to user preferences</p>
+                    <h2 class="fw-bold mb-3 text-light">Leave Tracker</h2>
+                    <p class="lead fw-lighter mb-4 text-light"> Leave Tracker is a simple web application developed using the Laravel framework for tracking
+                        employee leaves. The application allows employees to log in, submit leave requests, view their
+                        leave history, and for administrators to manage leave requests.</p>
                     <div class="d-flex flex-wrap">@auth
                             <a
                                 href="{{Auth::user()->role == 1 ? url('/admin/dashboard') : url('employee/dashboard') }}"

@@ -1,66 +1,263 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="">
+    <img src="public/assets/ss/one.png" alt="Logo" >
+  </a>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+<h2 align="center"> Leave Tracker</h2>
 
-## About Laravel
+  <p align="center"> Leave Tracker is a simple web application developed using the Laravel framework for tracking
+ employee leaves. The application allows employees to log in, submit leave requests, view their
+ leave history, and for administrators to manage leave requests. </p>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+[//]: # (<a href="/">View Demo</a>)
+</div>
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#About-The-Project">About The Project</a>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+    </li>
+    <li><a href="#Project-Requirement-and-Roadmap">Product Requirement and Roadmap
+</a></li>
+    <li><a href="#Key-Features">Key Features</a></li>
+    <li><a href="#contact">Contact</a></li>
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+  </ol>
+</details>
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+<!-- ABOUT THE PROJECT -->
 
-### Premium Partners
+## About The Project
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+<img src="public/assets/ss/two.png"/>
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### Built With
 
-## Security Vulnerabilities
+* [![Laravel][Laravel.com]][Laravel-url]
+* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-## License
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+<!-- GETTING STARTED -->
+
+## Getting Started
+
+### Prerequisites
+
+* PHP 8.2.4+
+* Composer (dependency manager for PHP)
+* Database (MySQL/ PostgreSQL/ SQLite/ SQL Server)
+* Git
+
+### Installation
+
+Please Follow the steps to install this project Locally.
+
+#### 1. Clone the repo
+
+Open your terminal and navigate to the directory where you want to install the Laravel project.
+Then run the following command:
+
+   ```sh
+   git clone https://github.com/Sabbir-Hossain12/Leave-Tracker.git
+   ```
+
+#### 2. Navigate to Project Directory
+
+Move into the project directory:
+
+   ```sh
+   cd Leave-Tracker
+   ```
+
+#### 3. Install Dependencies
+
+Once you are in the project directory, use Composer to install the required dependencies:
+
+   ```sh
+   composer install
+   ```
+
+#### 4. Create Environment File
+
+Laravel requires an environment file for configuration. Duplicate the .env.example file and save it as .env:
+
+   ```sh
+   cp .env.example .env
+   ```
+
+#### 5. Generate Application Key
+
+Run the following command to generate a unique application key:
+
+   ```sh
+php artisan key:generate
+   ```
+
+#### 6. Run Migrations
+
+Use the following command to run database migrations:
+
+   ```sh
+  php artisan migrate
+   ```   
+
+#### 7. Serve the Application
+
+You can use Laravel's built-in development server to run the application locally.
+Execute the following command:
+
+```sh
+php artisan serve
+```   
+
+This will start a development server, and you can access your Laravel application at http://127.0.0.1:8000 in your web
+browser.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+<!-- ROADMAP -->
+
+## Project Requirement and Roadmap
+
+* Use Laravel framework for backend development.
+* Implement CRUD operations for managing user accounts and leave requests.
+* Utilize Laravel's authentication system for user login and registration.
+* UseLaravel's email functionality for sending notifications.
+* Implement form validation to ensure the correctness of user input.
+* UseBladetemplates for frontend views.
+* Implementation of Vue/React for frontend will be a plus
+
+## Pages:
+### Login/Register Page:
+Allows users to log in or register for a new account.
+### Dashboard (for Admins):
+Displays statistics and pending leave requests. Provides links to manage user accounts
+and leave requests.
+### LeaveRequest Form:
+Allows employees to submit leave requests.
+### LeaveHistory Page:
+Shows a list of past leave requests for the logged-in user
+
+## Key Features:
+### User Authentication:
+Employees should be able to register an account or log in if they already have one.
+Admins should have special privileges to manage user accounts and leave requests.
+Admins will be able to approve employee registrations or block existing ones.
+###  Leave Request Submission:
+Employees should be able to submit leave requests specifying the type of leave (Casual
+Leave, Sick Leave, Emergency Leave), the start date, end date, and reason for leave.
+### Leave Approval Workflow:
+Admins should be able to review pending leave requests and approve or reject them.
+If a leave request is approved or rejected, the employee should receive a notification via
+email.
+###  Leave History:
+Employees should be able to view their leave history, including past leave requests, their
+statuses, and any comments added by the admin.
+### Dashboard:
+Admins should have access to a dashboard displaying statistics such as the total
+number of leave requests, pending requests, approved requests, and rejected requests.
+### Email Notifications:
+Automated email notifications should be sent to employees upon submission, approval,
+or rejection of their leave requests
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+
+<!-- CONTACT -->
+
+## Contact
+
+Sabbir Hossain- h.sabbir36@yahoo.com
+
+Project Link: https://github.com/Sabbir-Hossain12/Leave-Tracker
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+
+
+
+
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
+[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
+
+[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
+
+[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
+
+[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
+
+[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
+
+[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
+
+[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
+
+[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
+
+[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
+
+[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
+
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+
+[linkedin-url]: https://linkedin.com/in/othneildrew
+
+[product-screenshot]: images/screenshot.png
+
+[Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
+
+[Next-url]: https://nextjs.org/
+
+[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+
+[React-url]: https://reactjs.org/
+
+[Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
+
+[Vue-url]: https://vuejs.org/
+
+[Angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
+
+[Angular-url]: https://angular.io/
+
+[Svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
+
+[Svelte-url]: https://svelte.dev/
+
+[Laravel.com]: https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white
+
+[Laravel-url]: https://laravel.com
+
+[Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
+
+[Bootstrap-url]: https://getbootstrap.com
+
+[JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
+
+[JQuery-url]: https://jquery.com 
