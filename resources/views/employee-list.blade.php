@@ -72,7 +72,7 @@
 
                                         <select class="form-select" name="status" id="status">
                                             <option value="0">Pending</option>
-                                            <option value="1">Approved</option>
+                                            <option value="1">Approved</option>s
 
                                         </select>
 

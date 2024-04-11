@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\RejectedMail;
+use App\Mail\SubmittedMail;
+use App\Mail\SuccessMail;
 use App\Models\LeaveRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class LeaveController extends Controller
 {
@@ -50,6 +54,10 @@ class LeaveController extends Controller
             'employee_id' => auth()->user()->id
         ]);
 
+        $name=auth()->user()->name;
+        $email=auth()->user()->email;
+        Mail::to($email)->send(new SubmittedMail($name));
+
         return redirect()->route('leaves.index');
     }
 
@@ -74,13 +82,32 @@ class LeaveController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        LeaveRequest::where('id', $id)->update([
+      $data=  LeaveRequest::find($id);
+
+        $data->update([
             'status' => $request->status
         ]);
+        $data->save();
+
+        $name=$data->user->name;
+        $email=$data->user->email;
+
+//        LeaveRequest::where('id', $id)->update([
+//            'status' => $request->status
+//        ]);
+
+
+        if ($request->status == 'Approved') {
+
+            Mail::to($email)->send(new SuccessMail($name));
+        } else if ($request->status == 'Rejected') {
+
+                Mail::to($email)->send(new RejectedMail($name));
+            }
+
 
         return redirect()->route('leave-request-list');
     }
-
     /**
      * Remove the specified resource from storage.
      */
